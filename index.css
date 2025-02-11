@@ -896,7 +896,7 @@ small {
 /* ============================= */
 /* 📱 Responsive Design for All Devices */
 /* ============================= */
-/* 📱 cellphone (481px - 768px) */
+/* 📱 cellphone (480px) */
 @media (max-width: 480px) {
 
   body {
