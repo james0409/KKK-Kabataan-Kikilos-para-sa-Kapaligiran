@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kabataan Waste Management</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="blur-overlay" id="blurOverlay"></div>
+<div class="main-content">
+<!-- Main Content -->
+<div class="content" id="mainContent">
+  <div class="logos">
+    <img src="QCU logo.png" alt="Logo 1">
+    <img src="Com. logo.png" alt="Logo 2">
+    <img src="Sk logo.png" alt="Logo 3">
+  </div>
+
+  <div class="text-content">
+    <img src="backgroundText.png" alt="Kabataan KIKILOS para sa KAPALIGIRAN" class="title-image">
+    <br><button class="login" id="loginBtn">LOGIN</button>
+
+    <p class="signup">Don’t have an account yet? <a href="#" id="showSignupForm1">Sign-up</a></p>
+  </div>
+
+  <div class="socials">
+    <p><a href="#"><img src="Fb.png" alt="Facebook">Sanggunian Kabataan Barangay Commonwealth</a></p>
+    <p><a href="#"><img src="insta.png" alt="Instagram">skcommonwealth</a></p>
+    <p><a href="#"><img src="x.png" alt="Twitter">officialSKComm</a></p>
+  </div>
+
+  <p class="disclaimer">Disclaimer: Please be advised that this website is not intended for use in any campaign-related activities.</p>
+</div>
+</div>
+<!-- Hidden Login Form -->
+<div class="login-form-container hidden" id="loginForm">
+  <span class="close-btn" id="closeLogin">&times;</span>
+  <h2>Welcome!</h2>
+  <form action="#" method="POST">
+    <div class="input-group">
+      <input type="email" required id="login-email">
+      <label for="login-email">Email</label>
+    </div>
+
+    <div class="password-container">
+      <input type="password" required id="login-password">
+      <label for="login-password">Password</label>
+      <span class="toggle-password" onclick="togglePassword('login-password', this)">
+    👁
+  </span>
+    </div>
+
+
+    <div class="checkbox-container">
+      <input type="checkbox" id="remember-me">
+      <label for="remember-me">Remember me</label>
+    </div>
+
+    <button type="submit" class="login-btn">Login</button>
+    <a href="#" class="forgot-password">Forgot password?</a>
+    <hr class="separator">
+    <button type="button" class="signup-btn" id="openSignup1">Sign up</button>
+  </form>
+</div>
+
+<!-- First Sign-up Form (Initially Hidden) -->
+
+<div id="signup-form-1" class="signup-form hidden">
+  <span class="close-btn1" id="closeSignup1">&times;</span>
+
+  <div class="signup-container">
+    <!-- Left Section -->
+    <div class="signup-left">
+      <div class="back-btn" id="backToLogin">←</div>
+      <div class="profile-upload">
+        <div class="profile-image">
+          <img id="profile-preview" src="default-avatar.png" alt="Profile">
+          <label for="profile-input" class="upload-icon">+</label>
+        </div>
+        <input type="file" id="profile-input" accept="image/*" hidden>
+        <p>Upload Photo</p>
+      </div>
+      <label for="organization">Which organization are you part of?</label>
+      <select id="organization">
+        <option value=""disabled selected>Select an organization</option>
+      </select>
+      <label for="base">Which base are you part of?</label>
+      <select id="base">
+        <option value=""disabled selected>Select Base</option>
+      </select>
+      <label for="role">What is your role in the organization?</label>
+      <select id="role">
+        <option value="" disabled selected>Select a role</option>
+      </select>
+    </div>
+
+    <!-- Right Section -->
+    <div class="signup-right">
+      <h2>SIGN UP</h2>
+      <p>Create your account. It's free!</p>
+
+      <h3>Personal Information</h3>
+      <div class="input-row-info">
+        <input type="text" id="first-name" placeholder="First name">
+        <input type="text" id="last-name" placeholder="Last name">
+      </div>
+      <div class="middle-no">
+      <input type="text" id="middle-name" placeholder="Middle name">
+        <input type="tel" id="contact-number" placeholder="+63 912 345 6789"
+               pattern="^(\+63|0)?[9][0-9]{9}$" maxlength="13" required>
+      </div>
+        <div class="input-row">
+          <input type="date" id="birthdate" class="date-input">
+          <select id="gender">
+            <option value="" disabled selected>Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <input type="number" id="Age" placeholder="Age">
+        </div>
+      <h3>Home Address</h3>
+      <div class="input-row">
+        <input type="text" placeholder="Street no.">
+        <input type="text" placeholder="Street Name">
+      </div>
+      <div class="input-row">
+        <input type="text" id="barangay" class="address-baranggay" value="Barangay Commonwealth" readonly>
+        <input type="text" id="city" class="address-City" value="Quezon City" readonly>
+        <input type="text" id="zip-code" class="address-zipcode" value="1121" readonly>
+      </div>
+
+      <button class="submit-btn" id="nextToSignup2">Next</button>
+    </div>
+  </div>
+</div>
+
+<!-- Second Sign-up Form (Initially Hidden) -->
+<div id="signup-form-2" class="signup-form2 hidden">
+  <span class="close-btn" id="closeSignup2">&times;</span>
+  <h2>SECOND SIGN UP FORM</h2>
+  <p>Fill out the details for your next step.</p>
+
+  <div class="input-group3">
+    <input type="email" required id="login-email">
+    <label for="login-email">Email</label>
+  </div>
+
+  <div class="password-container2">
+    <input type="password" required id="password"
+           onfocus="showToggle('password-toggle')"
+           onblur="hideToggle('password-toggle')"
+           oninput="hideWhileTyping('password-toggle'); validatePassword()"
+           onkeyup="typingDone('password-toggle'); validatePassword()">
+    <label for="password">Password</label>
+    <span class="toggle-password2" id="password-toggle" onclick="togglePassword('password', this)" style="display: none;">👁</span>
+    <small id="password-error" style="color: red; display: none;">Password must be at least 8 characters, include 1 number, and 1 special character.</small>
+  </div>
+
+  <div class="password-container2">
+    <input type="password" required id="confirm-password"
+           onfocus="showToggle('confirm-password-toggle')"
+           onblur="hideToggle('confirm-password-toggle')"
+           oninput="hideWhileTyping('confirm-password-toggle'); validatePassword()"
+           onkeyup="typingDone('confirm-password-toggle'); validatePassword()">
+    <label for="confirm-password">Confirm Password</label>
+    <span class="toggle-password2" id="confirm-password-toggle" onclick="togglePassword('confirm-password', this)" style="display: none;">👁</span>
+    <small id="confirm-password-error" style="color: red; display: none;">Passwords do not match.</small>
+  </div>
+
+
+
+  <div class="back-btn2" id="backToSignup1">←</div>
+  <button class="submit-btn" onclick="addPost()">Submit</button>
+</div>
+
+<script src="index.js"></script>
+<script>
+  function addPost() {
+    // Perform any necessary actions before redirecting
+    // For example, form validation, saving data, etc.
+
+    // Redirect to feed.html
+    window.location.href = "feed.html";
+  }
+</script>
+</body>
+</html>

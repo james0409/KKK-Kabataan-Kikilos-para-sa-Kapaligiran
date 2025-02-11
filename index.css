@@ -1,0 +1,1020 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body and Container Layout */
+body {
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover; /* Ensures full coverage */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  transition: filter 0.5s ease;
+  overflow: hidden;
+  flex-direction: column;
+  overflow-y: auto; /* Enables vertical scrolling */
+  max-height: 90vh;
+}
+
+/* Main Content */
+.content {
+  text-align: center;
+  transition: filter 0.9s ease;
+}
+
+
+/* Main content wrapper */
+.main-content {
+  transition: filter 0.3s ease-in-out;
+}
+
+/* Blur effect when modal is active */
+.blur-active {
+  filter: blur(10px); /* Adjust the blur intensity */
+  pointer-events: none; /* Prevent clicking on blurred elements */
+
+}
+
+
+/* Blur Effect with Dark Overlay */
+.blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(15px);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s;
+  z-index: 10;
+}
+
+/* Show Blur Effect when Active */
+.blur-overlay.active {
+  visibility: visible;
+  opacity: 60;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+}
+
+/* Logo Section */
+.logos {
+  display: flex;
+  justify-content: center; /* Center the logos */
+  align-items: center;
+  gap: 60px; /* Space between logos */
+  margin-top: 15px; /* Adjust spacing from the text */
+  position: relative; /* Ensures it does not overlap */
+  z-index: 2; /* Keeps it above the background */
+}
+
+.logos img {
+  height: 100px; /* Adjust logo size */
+  max-width: 100px; /* Prevents stretching */
+  object-fit: contain; /* Ensures logos remain clear */
+  filter: drop-shadow(1px 4px 8px rgba(0, 0, 0, 0.7)); /* X, Y, Blur, Color */
+  border-radius: 10px; /* Optional: Makes edges smoother */
+}
+
+/* Title Image */
+.title-image {
+  margin-top: -5%;
+  width: 100%;
+  max-width: 990px;
+  height: auto;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: #2D512F;
+  margin-top: 10px;
+}
+
+/* Centering the button inside its container */
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Login Button */
+button.login {
+  background: #2D512F;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 20px;
+  border-radius: 30px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button.login:hover {
+  background: #1B3A1A;
+}
+
+/* Sign-up link */
+.signup {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.signup a {
+  color: #2D512F;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.signup a:hover {
+  text-decoration: underline;
+}
+
+/* Social Media Section */
+.socials {
+  font-family: 'Glacial Indifference', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px 0;
+  border-radius: 8px;
+}
+
+/* Social Media Links */
+.socials a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Social Media Hover Effect */
+.socials a:hover {
+  color: #2d5e2d;
+}
+
+/* Social Media Icons */
+.socials img {
+  width: 30px;
+  height: auto;
+}
+
+/* Disclaimer */
+.disclaimer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+
+/* ========================= */
+/* SIGNUP & LOGIN FORM STYLES */
+/* ========================= */
+.close-btn1 {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+/* Signup Form Container */
+.signup-container {
+  display: flex;
+  background: #f7fce8;
+  padding: 10px;
+  border-radius: 12px;
+  max-width: 2000px;
+  width: 100%;
+  margin: auto;
+}
+
+/* Left Section */
+.signup-left {
+  width: 40%;
+  padding: 20px;
+}
+/* Back Button */
+.back-btn {
+  position: absolute;
+  top: 25px;
+  left: 40px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.back-btn2 {
+  position: absolute;
+  top: 1px;
+  left: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+/* Profile Upload Section */
+.profile-upload {
+  margin-top: 40px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 147px;
+  border-radius: 50%;
+  background: #4D7B3F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+}
+
+.profile-image img {
+  width: 140px;
+  height: 137px;
+  border-radius: 50%;
+}
+
+/* Upload Icon (Label as Button) */
+.upload-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: #fff;
+  color: #2D512F;
+  border-radius: 50%;
+  font-size: 18px;
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid #2D512F;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Submit Button */
+.submit-btn {
+  width: 30%;
+  background: #2D512F;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.submit-btn:hover {
+  background: #1B3A1A;
+}
+
+/* Right Section */
+.signup-right {
+  width: 60%;
+  padding: 20px;
+  text-align: center;
+  background: #acd87d;
+  border-radius: 10px;
+  position: relative;
+}
+
+h2 {
+  font-size: 24px;
+  color: #2D512F;
+}
+
+h3 {
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* Input Fields */
+.input-row-info {
+  display: flex;
+  gap: 5px;
+}
+
+
+
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+
+/* Birth Date Input */
+.date-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #2D512F;
+  background: #F2F6E3;
+  text-align: center;
+  cursor: pointer;
+}
+
+.input-row{
+  display: flex;
+  flex: 1;
+  margin-top: 5px;
+  gap: 4px;
+}
+
+.address-baranggay{
+  width:50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #F2F6E3;
+  color: #2D512F;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.address-City{
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #F2F6E3;
+  color: #2D512F;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.address-zipcode{
+  width: 20%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #F2F6E3;
+  color: #2D512F;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+
+/* Signup & Login Buttons */
+.signup-btn, .login-btn {
+  width: 100%;
+  background: #2D512F;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.signup-btn:hover, .login-btn:hover {
+  background: #1B3A1A;
+}
+
+
+.signup-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  background: rgb(211, 225, 171);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 20;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s;
+  overflow-y: auto; /* Enables scrolling if needed */
+  max-height: 90vh; /* Prevents modal from exceeding screen height */
+}
+
+/* Show Forms when Active */
+.signup-form.show, .signup-form2.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.signup-form2{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 380px;
+  background: rgb(211, 225, 171);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 20;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s;
+  overflow: hidden;
+  overflow-y: auto; /* Enables vertical scrolling */
+  max-height: 90vh; /* Prevents the form from exceeding screen height */
+}
+/* Show Forms when Active */
+.signup-form2.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.signup-form{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  max-width: 1000px;
+  background: rgb(211, 225, 171);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 20;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s;
+  overflow: hidden;
+  overflow-y: auto; /* Enables vertical scrolling */
+  max-height: 90vh; /* Prevents the form from exceeding screen height */
+}
+/* Show Forms when Active */
+.signup-form.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.middle-no {
+  display: flex;
+  gap: 5px;
+}
+
+.middle-no {
+  margin-top: 4px;
+}
+
+
+.middle-no input {
+  width: 100%;
+  padding: 10px 10px 10px 13px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+
+
+/* Responsive Design */
+
+
+@media (max-width: 1024px) {
+  .signup-container {
+    flex-direction: column;
+  }
+
+  .signup-left, .signup-right {
+    width: 100%;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+
+  .signup-form {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  .back-btn, .back-btn2 {
+    font-size: 20px;
+  }
+
+  .profile-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-image img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .upload-icon {
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .input-row-info, .middle-no {
+    flex-direction: column;
+  }
+
+  .address-baranggay, .address-City, .address-zipcode {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-form {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .back-btn, .back-btn2 {
+    top: 10px;
+    left: 10px;
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  input, select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+
+
+/* Centered Forms */
+
+
+.login-form-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 20;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s;
+  overflow: hidden;
+  overflow-y: auto; /* Enables vertical scrolling */
+  max-height: 90vh;
+}
+
+/* Show Forms when Active */
+.login-form-container.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+
+/* Improved Input Field Styling */
+.input-group3 {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input-group3 label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #2d5e2d;
+  background: rgba(255, 255, 255, 0);
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+}
+
+.input-group3 input {
+  width: 100%;
+  padding: 12px 12px 12px 15px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+/* Move Label on Focus */
+.input-group3 input:focus ~ label,
+.input-group3 input:valid ~ label {
+  top: -18px;
+  left: 17px;
+  font-size: 15px;
+  transform: scale(0.9);
+}
+
+.input-group3 input:focus {
+  border-color: #2D512F;
+}
+
+
+
+/* Improved Input Field Styling */
+.input-group {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #2d5e2d;
+  background: rgba(255, 255, 255, 0.95);
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 12px 12px 15px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+/* Move Label on Focus */
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+  top: -7px;
+  left: 17px;
+  font-size: 12px;
+  transform: scale(0.9);
+}
+
+.input-group input:focus {
+  border-color: #2D512F;
+}
+
+/* Checkbox Container */
+.checkbox-container {
+  display: flex;
+  align-items: center; /* Aligns checkbox and text vertically */
+  gap: 8px; /* Adjust spacing between checkbox and text */
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Checkbox Input */
+.checkbox-container input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Checkbox Label */
+.checkbox-container label {
+  cursor: pointer;
+  color: #2D512F;
+  font-size: 14px;
+}
+
+
+/* Password Input Container */
+.password-container2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.password-container2 input {
+  width: 100%;
+  padding: 12px 12px 12px 15px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.password-container2 label {
+  position: absolute;
+  top: 11px;
+  left: 10px;
+  color: rgb(45, 94, 45);
+  font-size: 15px;
+  transition: 0.3s ease-in-out;
+}
+
+.password-container2 input:focus + label,
+.password-container2 input:valid + label {
+  top: -18px;
+  left: 15px;
+  font-size: 15px;
+  color: rgb(45, 94, 45);
+  background: rgba(45, 94, 45, 0);
+  padding: 0 5px;
+}
+
+.password-container2 small {
+  color: red;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}
+
+.toggle-password2 {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #555;
+  display: none; /* Initially hidden */
+}
+
+small {
+  font-size: 12px;
+  display: none;
+}
+
+/* Password Input Container */
+.password-container {
+  position: relative;
+  margin: 20px 0;
+}
+
+/* Password Input */
+.password-container input {
+  width: 100%;
+  padding: 12px 12px 12px 15px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+/* Label Styling */
+.password-container label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #2d5e2d;
+  background: rgba(255, 255, 255, 0.95);
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+
+}
+
+/* Move Label on Focus */
+.password-container input:focus ~ label,
+.password-container input:valid ~ label {
+  top: -7px;
+  left: 17px;
+  font-size: 12px;
+  transform: scale(0.9);
+}
+
+.input-group input:focus {
+  border-color: #2D512F;
+}
+
+
+/* Show Password Icon */
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #2D512F;
+}
+
+/* Forgot Password */
+.forgot-password {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #2D512F;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Separator */
+.separator {
+  margin: 15px 0;
+  border: none;
+  height: 1px;
+  background: #2D512F;
+  width: 100%;
+}
+
+
+
+/* ============================= */
+/* 📱 Responsive Design for All Devices */
+/* ============================= */
+
+
+
+/* 📱 Tablets (481px - 768px) */
+@media (max-width: 768px) {
+
+  body {
+    padding: 10px;
+    overflow-y: auto; /* Enables scrolling */
+  }
+
+  .container {
+    padding: 30px;
+    max-width: 95%; /* Ensure it adjusts well */
+  }
+
+  .logos {
+    display: flex;
+    flex-wrap: wrap; /* Prevents overlap */
+    justify-content: center;
+    align-items: center;
+    margin-top: 0; /* Removed negative margin */
+    gap: 20px;
+  }
+
+  .logos img {
+    height: 50px; /* Slightly smaller for balance */
+    max-height: 60px;
+  }
+
+  .title-image {
+    max-width: 85%; /* Adjusted for better readability */
+  }
+
+  .subtitle {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  button.login {
+    padding: 12px 30px;
+    font-size: 18px;
+  }
+
+  .socials {
+    flex-direction: row; /* Keep icons in one line if possible */
+    flex-wrap: wrap; /* Allow them to wrap when needed */
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .socials img {
+    width: 28px;
+  }
+}
+
+
+/* 💻 Laptops & Desktops (769px - 1200px) */
+@media (max-width: 1200px) {
+  body {
+    padding: 10px;
+    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: 1000vh;
+  }
+
+
+  .container {
+    max-width: 850px;
+  }
+
+  .logos img {
+    height: 100px;
+  }
+
+  .title-image {
+    max-width: 90%;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .socials {
+    flex-direction: row; /* Keep icons in one line if possible */
+    flex-wrap: wrap; /* Allow them to wrap when needed */
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .socials img {
+    width: 28px;
+  }
+}
+
+/* 🖥️ Large Screens & Desktops */
+@media (min-width: 1201px) {
+  body {
+    padding: 10px;
+    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: 1000vh;
+  }
+  .container {
+    max-width: 900px;
+  }
+
+  .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Ensures proper alignment */
+    gap: 50px;
+    position: relative;
+    z-index: 1;
+    margin-top: 10px; /* Adjust to prevent overlapping */
+  }
+
+  .logos img {
+    display: block;
+    max-height: 100px;
+    object-fit: contain;
+  }
+}

@@ -1,0 +1,264 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body and Container Layout */
+body {
+  background-color: #d3e1ab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+}
+
+/* Logo Section */
+.logoB {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  width: 100%;
+}
+
+.logos img {
+  height: 115px;
+}
+
+/* Title Image */
+.title-image {
+  margin-top: 5%;
+  width: 100%;
+  max-width: 990px;
+  height: auto;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: #2D512F;
+  margin-top: 10px;
+}
+
+/* Centering the button inside its container */
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Login Button */
+button.login {
+  background: #2D512F;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 20px;
+  border-radius: 30px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button.login:hover {
+  background: #1B3A1A;
+}
+
+/* Sign-up link */
+.signup {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.signup a {
+  color: #2D512F;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.signup a:hover {
+  text-decoration: underline;
+}
+
+/* Social Media Section */
+.socials {
+  font-family: 'Glacial Indifference', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px 0;
+  border-radius: 8px;
+}
+
+/* Social Media Links */
+.socials a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Social Media Hover Effect */
+.socials a:hover {
+  color: #ff6600;
+}
+
+/* Social Media Icons */
+.socials img {
+  width: 30px;
+  height: auto;
+}
+
+/* Disclaimer */
+.disclaimer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+
+/* ============================= */
+/* 📱 Responsive Design for All Devices */
+/* ============================= */
+
+/* 🌟 Small Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .logoB {
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    top: 0;
+  }
+
+  .logos img {
+    height: 70px;
+  }
+
+  .title-image {
+    max-width: 90%;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  button.login {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+
+  .socials {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .socials img {
+    width: 25px;
+  }
+
+  .disclaimer {
+    font-size: 10px;
+  }
+}
+
+/* 📱 Tablets (481px - 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px;
+  }
+
+  .logos {
+    gap: 30px;
+  }
+
+  .logos img {
+    height: 90px;
+  }
+
+  .title-image {
+    max-width: 85%;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  button.login {
+    padding: 12px 30px;
+    font-size: 18px;
+  }
+
+  .socials {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .socials img {
+    width: 28px;
+  }
+}
+
+/* 💻 Laptops & Desktops (769px - 1200px) */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 850px;
+  }
+
+  .logos img {
+    height: 100px;
+  }
+
+  .title-image {
+    max-width: 90%;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .socials img {
+    width: 30px;
+  }
+}
+
+/* 🖥️ Large Screens & Desktops */
+@media (min-width: 1201px) {
+  .container {
+    max-width: 900px;
+  }
+
+  .logos img {
+    height: 115px;
+  }
+}

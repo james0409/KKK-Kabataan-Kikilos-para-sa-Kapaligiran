@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKK Social Feed</title>
+    <link rel="stylesheet" href="feed.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<nav>
+    <div class="nav-logo">
+        <img src="sk logo.png" alt="KKK Logo">
+        <span><strong>KKK</strong></span>
+    </div>
+
+    <div class="nav-menu">
+        <a href="#" class="active">FEED</a>
+        <a href="#">GUIDE</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">CONTACT US</a>
+    </div>
+
+    <div class="nav-icons">
+        <img src="reward.png" alt="Gifts">
+        <img src="map.png" alt="Location">
+        <img src="notifications.png" alt="Notifications">
+    </div>
+</nav>
+
+<!-- Wrapper for Sidebar & Content -->
+<div class="layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="profile">
+            <img src="profile.png" alt="Admin">
+            <h3>Eduardo David III</h3>
+        </div>
+        <div class="menu">
+            <div class="dropdown">
+                <button class="dropdown-btn" onclick="toggleDropdown()">
+                    <img src="youth-icon.png" alt="Youth Leaders"> <!-- Replace with actual icon -->
+                    <span>YOUTH LEADERS</span>
+                    <span class="arrow">&#9662;</span> <!-- Up arrow when active -->
+                </button>
+                <ul class="dropdown-content" id="dropdownMenu">
+                    <li><img src="youth-icon.png" alt="Base 1"><a href="#">BASE 1</a></li>
+                    <li><img src="youth-icon.png" alt="Base 2"><a href="#">BASE 2</a></li>
+                    <li><img src="youth-icon.png" alt="Base 3"><a href="#">BASE 3</a></li>
+                    <li><img src="youth-icon.png" alt="Base 4"><a href="#">BASE 4</a></li>
+                    <li><img src="youth-icon.png" alt="Base 5"><a href="#">BASE 5</a></li>
+                    <li><img src="youth-icon.png" alt="Base 6"><a href="#">BASE 6</a></li>
+                    <li><img src="youth-icon.png" alt="Base 7"><a href="#">BASE 7</a></li>
+                    <li><img src="youth-icon.png" alt="Base 8"><a href="#">BASE 8</a></li>
+                    <li><img src="youth-icon.png" alt="Base 9"><a href="#">BASE 9</a></li>
+
+                    <div class="dropdown-footer">
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="post-area">
+        <!-- Post Box -->
+        <div class="post-box">
+            <!-- Upload Button -->
+            <label for="uploadImage" class="upload-btn">
+                <img src="photo-icon.png" alt="Upload">
+            </label>
+            <input type="file" id="uploadImage" accept="image/*" onchange="previewImage(event)">
+
+            <!-- Text Input -->
+            <input type="text" placeholder="What's on your mind?" id="postText" onkeypress="handleKeyPress(event)">
+
+            <!-- Post Button -->
+            <button onclick="addPost()">POST</button>
+        </div>
+
+        <!-- Image Preview Container -->
+        <div id="imagePreviewContainer"  style="display: none; flex-direction: column; align-items: center; background: #262626; padding: 10px; border-radius: 10px; width: 100%; max-width: 500px; position: relative;">
+            <img id="imagePreview" src="" alt="Preview" style="width: 100%; max-height: 300px; border-radius: 10px; object-fit: cover;">
+            <button onclick="clearImagePreview()" style="position: absolute; top: 10px; right: 10px; background: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 18px; cursor: pointer; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">✖</button>
+        </div>
+
+        <!-- Post Feed -->
+        <div class="feed" id="feed" hidden="hidden">
+            <div class="post" hidden="hidden">
+                <!-- Post Header with Dynamic Time -->
+                <div class="post-header" hidden="hidden">
+                    <img src="" alt="Profile" class="profile-pic" hidden="hidden">
+                    <div class="user-info" hidden="hidden">
+                        <h4></h4>
+                        <span class="post-time" data-time="" hidden="hidden">Just now</span> <!-- Time updates automatically -->
+                    </div>
+                </div>
+
+                <!-- Post Image -->
+                <img src="" alt="Community Cleanup" class="post-img" hidden="hidden">
+
+                <!-- Post Actions -->
+                <div class="actions" hidden="hidden">
+                    <button class="like-btn" onclick="toggleLike(this)" hidden="hidden">❤️ <span class="like-count" hidden="hidden">0</span></button>
+                    <button class="comment-btn" onclick="toggleComments(this)" hidden="hidden">💬 Comment</button>
+                </div>
+
+                <!-- Comment Section (Hidden by Default) -->
+                <div class="comment-section" hidden="hidden">
+                    <div class="comment-list" hidden="hidden"></div> <!-- Container for comments -->
+                    <input type="text" placeholder="Write a comment..." class="comment-input" onkeypress="addComment(event)" hidden="hidden">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+    <script src="feed.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="styles.css">
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f5da;
+            text-align: center;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            display: flex;
+            background-color: #d0e6a5;
+            padding: 20px;
+            border-radius: 10px;
+            width: 850px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .signup-container {
+            display: flex;
+            width: 100%;
+        }
+        .left-panel {
+            width: 40%;
+            padding: 20px;
+            background-color: #f5f9e3;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .profile-upload {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            border: 3px solid #4a7c59;
+            margin-bottom: 10px;
+        }
+        select, input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            background-color: #4a7c59;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+        .right-panel {
+            width: 60%;
+            padding: 20px;
+            background-color: #c3e6a4;
+            border-radius: 10px;
+        }
+        .birthdate input {
+            width: 28%;
+            display: inline-block;
+        }
+        .address input {
+            width: 48%;
+            display: inline-block;
+        }
+        .address-options button {
+            background-color: #6aaf60;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            margin: 5px 3px;
+            cursor: pointer;
+        }
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" class="signup-btn" id="openSignup1">Sign up</button>
+    
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="signup-container">
+                <div class="left-panel">
+                    <button class="back-btn">&#x2190;</button>
+                    <div class="profile-upload">
+                        <div class="profile-pic"></div>
+                        <p>Upload Photo</p>
+                    </div>
+                    <label>Which organization are you part of?</label>
+                    <select><option>Select</option></select>
+                    <label>What is your role in the organization?</label>
+                    <select><option>Select</option></select>
+                    <button class="submit-btn">SUBMIT</button>
+                </div>
+                <div class="right-panel">
+                    <h2>SIGN UP</h2>
+                    <p>Create your account. It’s free!</p>
+                    <label>First name</label>
+                    <input type="text">
+                    <label>Last name</label>
+                    <input type="text">
+                    <label>Middle name</label>
+                    <input type="text">
+                    <label>Gender</label>
+                    <select><option>Select</option></select>
+                    <label>Birth Date</label>
+                    <div class="birthdate">
+                        <input type="text" placeholder="MM">
+                        <input type="text" placeholder="DD">
+                        <input type="text" placeholder="YY">
+                    </div>
+                    <label>Home Address</label>
+                    <div class="address">
+                        <input type="text" placeholder="Street no.">
+                        <input type="text" placeholder="Street Name">
+                    </div>
+                    <div class="address-options">
+                        <button>Barangay Commonwealth</button>
+                        <button>Quezon City</button>
+                        <input type="text" placeholder="Zip Code">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById("openSignup1").onclick = function() {
+            document.getElementById("signupModal").style.display = "block";
+        }
+        document.querySelector(".close").onclick = function() {
+            document.getElementById("signupModal").style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("signupModal")) {
+                document.getElementById("signupModal").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
