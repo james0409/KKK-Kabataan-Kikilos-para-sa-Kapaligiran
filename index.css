@@ -896,7 +896,58 @@ small {
 /* ============================= */
 /* 📱 Responsive Design for All Devices */
 /* ============================= */
+/* 📱 cellphone (481px - 768px) */
+@media (max-width: 480px) {
 
+  body {
+    padding: 10px;
+    overflow-y: auto; /* Enables scrolling */
+  }
+
+  .container {
+    padding: 30px;
+    max-width: 95%; /* Ensure it adjusts well */
+  }
+
+  .logos {
+    display: flex;
+    flex-wrap: wrap; /* Prevents overlap */
+    justify-content: center;
+    align-items: center;
+    margin-top: 0; /* Removed negative margin */
+    gap: 20px;
+  }
+
+  .logos img {
+    height: 50px; /* Slightly smaller for balance */
+    max-height: 60px;
+  }
+
+  .title-image {
+    max-width: 85%; /* Adjusted for better readability */
+  }
+
+  .subtitle {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  button.login {
+    padding: 12px 30px;
+    font-size: 18px;
+  }
+
+  .socials {
+    flex-direction: row; /* Keep icons in one line if possible */
+    flex-wrap: wrap; /* Allow them to wrap when needed */
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .socials img {
+    width: 28px;
+  }
+}
 
 
 /* 📱 Tablets (481px - 768px) */
